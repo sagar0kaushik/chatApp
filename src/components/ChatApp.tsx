@@ -19,7 +19,7 @@ export default function ChatApp() {
     { id: 4, name: "she", lastMessage: "team member", avatar: "https://i.pravatar.cc/150?img=5" },
   ];
 
-  // ✅ messages
+  // messages
   const [chatMessages, setChatMessages] = useState<Record<string, any[]>>({
     Group: [
       { from: "rohan", text: "Brooo, meeting today right?", time: "9:00 AM" },
@@ -47,7 +47,7 @@ export default function ChatApp() {
     ],
   });
 
-  // ✅ send
+  // send
   const handleSend = () => {
     if (!message.trim() || !selectedChat) return;
 
@@ -69,7 +69,7 @@ export default function ChatApp() {
     c.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  // ✅ descriptions
+  // descriptions
   const chatDescriptions: Record<string, string> = {
     Group: "This is your go-to hub for seamless communication and collaboration among our team. Share updates, discuss plans, and stay in sync effortlessly.",
     sagar: "Chat with Sagar directly. Share quick updates, reminders, or casual talk anytime without the group noise.",
@@ -99,7 +99,7 @@ export default function ChatApp() {
           </button>
         </div>
 
-        {/* Contacts */}
+        /* Contacts */
         <div className="flex-1 overflow-y-auto space-y-1">
           {filteredContacts.map((contact) => (
             <div
@@ -117,11 +117,11 @@ export default function ChatApp() {
         </div>
       </div>
 
-      {/* Chat Window */}
+      /* Chat Window */
       <div className="flex-1 flex flex-col rounded-2xl shadow-xl bg-purple-50">
         {selectedChat ? (
           <>
-            {/* Header */}
+            /* Header */
             <div className="flex items-center justify-between p-4 shadow-md rounded-t-2xl bg-white/70 backdrop-blur-md">
               <div className="flex items-center space-x-3">
                 <img src={selectedChat.avatar} className="w-10 h-10 rounded-full" />
@@ -143,7 +143,7 @@ export default function ChatApp() {
               </div>
             </div>
 
-            {/* Messages */}
+            /* Messages */
             <div className="flex-1 p-4 overflow-y-auto">
               {chatMessages[selectedChat.name]?.map((msg, idx) => (
                 <div
@@ -160,7 +160,7 @@ export default function ChatApp() {
               ))}
             </div>
 
-            {/* Input */}
+            /* Input */
             <div className="p-3 bg-white/70 backdrop-blur-md flex items-center rounded-b-2xl shadow-inner">
               <div className="flex items-center bg-gray-100 rounded-lg px-2 flex-1 shadow-sm">
                 <input
@@ -189,7 +189,7 @@ export default function ChatApp() {
         )}
       </div>
 
-      {/* Info Sidebar */}
+      /* Info Sidebar */
       {showGroupInfo && (
         <div className="w-1/4 flex flex-col rounded-2xl shadow-lg bg-white/80 backdrop-blur-md">
           <div className="flex justify-between items-center p-4 shadow-sm bg-gradient-to-r from-pink-50 to-purple-50 rounded-t-2xl">
@@ -207,7 +207,7 @@ export default function ChatApp() {
             </p>
           </div>
 
-          {/* ✅ Members list only in Group info */}
+          /*  Members list only in Group info */
           {selectedChat?.name === "Group" && (
             <div className="p-4 flex-1 overflow-y-auto">
               <h4 className="font-bold mb-2">Members</h4>
@@ -226,3 +226,4 @@ export default function ChatApp() {
     </div>
   );
 }
+
