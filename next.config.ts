@@ -11,6 +11,7 @@ const nextConfig = {
         hostname: "static.thenounproject.com",
       },
     ],
+    base : process.env.BASE_CHATAPP || "/chatApp"
   },
 };
 
